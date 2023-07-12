@@ -46,12 +46,19 @@ class _AppointmentsBodyState extends State<AppointmentsBody> {
                       color: selectedStatus == index ? Utility.primaryColor : Utility.greyColor,
                       borderRadius: BorderRadius.circular(8)
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
-                      child: Text(statusText[index],
-                          style: selectedStatus == index
-                              ? Utility.primaryTextWhite
-                              : Utility.primaryTextBlack),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          selectedStatus = index;
+                        });
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
+                        child: Text(statusText[index],
+                            style: selectedStatus == index
+                                ? Utility.primaryTextWhite
+                                : Utility.primaryTextBlack),
+                      ),
                     ),
                   );
                 },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pharm/screens/appointments/view/appointments_body.dart';
 import 'package:pharm/utility.dart';
@@ -43,19 +44,35 @@ class _AppointmentsState extends State<Appointments> {
           BottomNavigationBarItem(
             backgroundColor: Utility.primaryColor,
             label: 'Home',
-              icon:  Icon(Icons.home_outlined)),
+              icon:  SvgPicture.asset(
+                'assets/images/icon_home.svg',
+                colorFilter: ColorFilter.mode(
+                    selectedItem == 0 ? Colors.white : Colors.black, BlendMode.srcIn),
+              )),
           BottomNavigationBarItem(
               backgroundColor: Utility.primaryColor,
               label: 'Appointments',
-              icon: Icon(Icons.calendar_month)),
+              icon: SvgPicture.asset(
+                'assets/images/uis_schedule.svg',
+                colorFilter: ColorFilter.mode(
+                    selectedItem == 1 ? Colors.white : Colors.black, BlendMode.srcIn),
+              )),
           BottomNavigationBarItem(
               backgroundColor: Utility.primaryColor,
               label: 'Chat',
-              icon: Icon(Icons.call_outlined)),
+              icon:  SvgPicture.asset(
+                'assets/images/ion_logo-whatsapp.svg',height: 32,
+                colorFilter: ColorFilter.mode(
+                    selectedItem == 2 ? Colors.white : Colors.black, BlendMode.srcIn),
+              )),
           BottomNavigationBarItem(
               backgroundColor: Utility.primaryColor,
               label: 'Notifications',
-              icon: Icon(Icons.notifications_outlined)),
+              icon:SvgPicture.asset(
+                'assets/images/icon_notifications.svg',height: 32,
+                colorFilter: ColorFilter.mode(
+                    selectedItem == 3 ? Colors.white : Colors.black, BlendMode.srcIn),
+              )),
         ],
       ),
       body: const AppointmentsBody(),

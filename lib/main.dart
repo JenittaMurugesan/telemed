@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharm/screens/appointments/appointments.dart';
+import 'package:pharm/screens/appointments_details/appointments_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Appointments(),
+        '/appointments-details': (context) => const AppointmentDetails(),
       },
     );
   }

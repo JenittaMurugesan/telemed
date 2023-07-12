@@ -79,52 +79,57 @@ class _AppointmentsBodyState extends State<AppointmentsBody> {
 
   buildAppointmentCard(BuildContext context) {
     return IntrinsicHeight (
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-            color: Utility.secondaryColor,
-            borderRadius: BorderRadius.circular(8)
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Ramesh Patel", style: Utility.primaryTitleBlack,),
-                Text("Dr. Ajit Bhalla", style: Utility.primaryText12,),
-                const SizedBox(height: 4),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text("Last appointment : 24/8/22", style: Utility.miniGreyText10,),
-                    const SizedBox(width: 8),
-                    const CircleAvatar(radius: 4, backgroundColor: Colors.red,),
-                    const SizedBox(width: 4),
-                    Text("Virtual", style: Utility.primaryText12,),
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                VerticalDivider(
-                  color: Utility.darkGreyColor,
-                  thickness: 2,
-                ),
-                const SizedBox(width: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text("14:20", style: Utility.primaryText24,),
-                    Text("Slot - 2 ", style: Utility.primaryText12,),
-                    Text("1 July", style: Utility.primaryText12,),
-                  ],
-                )
-              ],
-            )
-          ],
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, Utility.appointmentDetails);
+        },
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: Utility.secondaryColor,
+              borderRadius: BorderRadius.circular(8)
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Ramesh Patel", style: Utility.primaryTitleBlack,),
+                  Text("Dr. Ajit Bhalla", style: Utility.primaryText12,),
+                  const SizedBox(height: 4),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Last appointment : 24/8/22", style: Utility.miniGreyText10,),
+                      const SizedBox(width: 8),
+                      const CircleAvatar(radius: 4, backgroundColor: Colors.red,),
+                      const SizedBox(width: 4),
+                      Text("Virtual", style: Utility.primaryText12,),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  VerticalDivider(
+                    color: Utility.darkGreyColor,
+                    thickness: 2,
+                  ),
+                  const SizedBox(width: 8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text("14:20", style: Utility.primaryText24,),
+                      Text("Slot - 2 ", style: Utility.primaryText12,),
+                      Text("1 July", style: Utility.primaryText12,),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

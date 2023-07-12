@@ -44,6 +44,9 @@ class Utility {
   static TextStyle primaryText16 = GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Colors.black, fontSize: 16, fontWeight: FontWeight.normal));
+  static TextStyle primaryText14 = GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: Colors.black, fontSize: 14, fontWeight: FontWeight.normal));
   static TextStyle primaryText18 = GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Colors.black, fontSize: 18, fontWeight: FontWeight.normal));
@@ -59,6 +62,9 @@ class Utility {
   static TextStyle miniGreyText = GoogleFonts.poppins(
       textStyle: TextStyle(
           color: lightGreyTextColor, fontSize: 12, fontWeight: FontWeight.normal));
+  static TextStyle greyText10 = GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: lightGreyTextColor, fontSize: 10, fontWeight: FontWeight.normal));
   static TextStyle miniGreyText10 = GoogleFonts.poppins(
       textStyle: TextStyle(
           color: lightGreyTextColor, fontSize: 10, fontWeight: FontWeight.normal));
@@ -146,7 +152,7 @@ class Utility {
     );
   }
 
-  static fullSizedButtonIcon(BuildContext context, onPress, text, color, assetName,
+  static fullSizedButtonIcon(BuildContext context, VoidCallback onPress, text, color, assetName,
       {double? width, TextStyle? style, Color? assetColor}) {
     return MaterialButton(
       elevation: 0,
@@ -159,7 +165,7 @@ class Utility {
         child: Row(
           children: [
             Text(text, style: style ?? buttonPrimaryWhite),
-            SizedBox(width: 4),
+            const SizedBox(width: 4),
             SvgPicture.asset(
               assetName,
               colorFilter: ColorFilter.mode(assetColor ?? Colors.black, BlendMode.srcIn),
